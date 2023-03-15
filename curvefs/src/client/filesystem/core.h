@@ -140,12 +140,12 @@ inline bool operator!=(const TimeSpec& lhs, const TimeSpec& rhs) {
 }
 
 inline bool operator<(const TimeSpec& lhs, const TimeSpec& rhs) {
-    return (lhs.seconds < rhs.seconds) &&
+    return (lhs.seconds < rhs.seconds) ||
         (lhs.seconds == rhs.seconds && lhs.nanoSeconds < rhs.nanoSeconds);
 }
 
 inline bool operator>(const TimeSpec& lhs, const TimeSpec& rhs) {
-    return (lhs.seconds > rhs.seconds) &&
+    return (lhs.seconds > rhs.seconds) ||
         (lhs.seconds == rhs.seconds && lhs.nanoSeconds > rhs.nanoSeconds);
 }
 
